@@ -1,0 +1,3 @@
+/Users/n1kta/CLionProjects/SFMLDemo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/n1kta/CLionProjects/SFMLDemo/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/n1kta/CLionProjects/SFMLDemo/cmake-build-debug/CMakeFiles/SFMLDemo.dir
