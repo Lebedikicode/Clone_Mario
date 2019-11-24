@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/n1kta/CLionProjects/SFMLDemo/main.cpp
+/Users/n1kta/CLionProjects/SFMLDemo/Player.h
 SFML/Graphics.hpp
 -
+string.h
+-
+
+/Users/n1kta/CLionProjects/SFMLDemo/main.cpp
+Player.h
+/Users/n1kta/CLionProjects/SFMLDemo/Player.h
 
 /usr/local/include/SFML/Config.hpp
 TargetConditionals.h
