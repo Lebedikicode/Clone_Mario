@@ -13,12 +13,10 @@ string.h
 -
 
 /Users/n1kta/CLionProjects/SFMLDemo/main.cpp
-Player.h
-/Users/n1kta/CLionProjects/SFMLDemo/Player.h
 SFML/Graphics.hpp
 -
-iostream
--
+Player.h
+/Users/n1kta/CLionProjects/SFMLDemo/Player.h
 fstream
 -
 
