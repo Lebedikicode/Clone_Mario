@@ -12,13 +12,19 @@ SFML/Graphics.hpp
 string.h
 -
 
+/Users/n1kta/CLionProjects/SFMLDemo/View.h
+SFML/Graphics.hpp
+-
+
 /Users/n1kta/CLionProjects/SFMLDemo/main.cpp
 SFML/Graphics.hpp
 -
-Player.h
-/Users/n1kta/CLionProjects/SFMLDemo/Player.h
 fstream
 -
+Player.h
+/Users/n1kta/CLionProjects/SFMLDemo/Player.h
+View.h
+/Users/n1kta/CLionProjects/SFMLDemo/View.h
 
 /usr/local/include/SFML/Config.hpp
 TargetConditionals.h

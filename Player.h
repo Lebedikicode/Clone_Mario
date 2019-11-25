@@ -12,18 +12,19 @@ enum Direction {
 
 class Player {
 private:
-
+    float x, y;
 public:
-    float x, y, dx, dy; // координаты
-//    float speed = 0; // скорость с которой двигается персонаж
+    float dx, dy; // координаты
     int dir = 0; // направление
+    float speed = 0; // скорость с которой двигается персонаж
     std::string file; // путь к изображению
     Image Img;
     Texture Texture;
     Sprite Sprite;
     Player(float x, float y, int rL, int rT, int rW, int rH, std::string file);
-//    void update(float time);
-
+    void update(float time);
+    float getX(); // координаты персонажа по х
+    float getY(); // координаты персонажа по у
 };
 
 

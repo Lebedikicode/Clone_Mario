@@ -1,15 +1,16 @@
 #include <SFML/Graphics.hpp>
-#include "Player.h"
 #include <fstream>
+#include "Player.h"
+#include "View.h"
 
 using namespace sf;
 
 int main()
 {
-    Player hero(50, 470, 0, 0, 67, 93, "img/allHeroes/p1_walk.png");;
     const int height = 17, width = 225;
 
     RenderWindow window(VideoMode(910, 595), "Mario");
+    view.reset(FloatRect(0, 0, 910, 595));
 
     Texture tileSet;
     tileSet.loadFromFile("/Users/n1kta/CLionProjects/SFMLDemo/img/grass_photo-resizer.ru.png");
@@ -33,13 +34,12 @@ int main()
     tileSet7.loadFromFile("/Users/n1kta/CLionProjects/SFMLDemo/img/lock_green_photo-resizer.ru.png");
 
     Sprite tile;
+
     String al[height][width];
     std::ifstream file;
-
     file.open("/Users/n1kta/CLionProjects/SFMLDemo/map.txt");
 
-    float CurrentFrame = 0;
-    Clock clock;
+    Player hero(50, 515, 0, 0, 32, 46, "img/allHeroes/p1_walk_photo-resizer.ru.png");
 
     if (!file) return 0;
     for (int r = 0; r < height; r++)
@@ -52,48 +52,50 @@ int main()
         }
     }
 
-    file.close();
-
-    int a = 0;
-    int b = 0;
+    float CurrentFrame = 0;
+    Clock clock;
 
     while (window.isOpen())
     {
         float time = clock.getElapsedTime().asMicroseconds();
         clock.restart();
-        time = time / 1000;
+        time = time / 700;
 
         Event event;
 
         while (window.pollEvent(event))
         {
-            if (event.type == Event::Closed) window.close();
-        }
-        if (Keyboard::isKeyPressed(Keyboard::Right))
-        {
-            hero.dir = Left;
-            CurrentFrame += 0.005 * time;
-            if (CurrentFrame > 3) CurrentFrame -= 3;
-            a += CurrentFrame * 1.25;
-            hero.Sprite.setTextureRect(IntRect(71 * int(CurrentFrame), 93+93, 70, 93));
-        }
-        if (Keyboard::isKeyPressed(Keyboard::Left))
-        {
-            hero.dir = Right;
-            CurrentFrame += 0.005 * time;
-            if (CurrentFrame > 3) CurrentFrame -= 3;
-            a-= CurrentFrame * 1.25;
-            hero.Sprite.setTextureRect(IntRect(67 * int(CurrentFrame)+67, 93, -66, 93));
-        }
-        if (Keyboard::isKeyPressed(Keyboard::Up))
-        {
-            hero.dir = Up;
-            CurrentFrame += 0.005 * time;
-            if (CurrentFrame > 2) CurrentFrame -= 2;
-            b += CurrentFrame * 1.25;
-            hero.Sprite.setTextureRect(IntRect(70 * int(CurrentFrame), 93+93+93, 70, 93));
+            if (event.type == Event::Closed)
+                window.close();
         }
 
+        if(Keyboard::isKeyPressed(Keyboard::Left)){
+            hero.dir = Left;
+            hero.speed = 0.1;
+            CurrentFrame += 0.005 * time;
+            if (CurrentFrame > 3) CurrentFrame -= 3;
+            hero.Sprite.setTextureRect(IntRect(34 * int(CurrentFrame)+34, 46, -34, 46));
+            getCameraFollowHero(hero.getX(), hero.getY());
+        }
+        if(Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::D)){
+            hero.dir = Right;
+            hero.speed = 0.1;
+            CurrentFrame += 0.005 * time;
+            if (CurrentFrame > 3) CurrentFrame -= 3;
+            hero.Sprite.setTextureRect(IntRect(35 * int(CurrentFrame), 46*2, 35, 46));
+            getCameraFollowHero(hero.getX(), hero.getY());
+        }
+        if(Keyboard::isKeyPressed(Keyboard::Up) || Keyboard::isKeyPressed(Keyboard::W)){
+            hero.dir = Up;
+            hero.speed = 0.1;
+            CurrentFrame += 0.005 * time;
+            if (CurrentFrame > 2) CurrentFrame -= 2;
+            hero.Sprite.setTextureRect(IntRect(35 * int(CurrentFrame), 46*3, 35, 46));
+            getCameraFollowHero(hero.getX(), hero.getY());
+        }
+
+        hero.update(time);
+        window.setView(view);
         window.clear();
 
         for (int i = 0; i < height; i++)
@@ -105,6 +107,7 @@ int main()
                 window.draw(tile);
             }
         }
+
         for (int i = 0; i < height; i++)
         {
             for (int j = 0; j < width; j++)
@@ -118,7 +121,7 @@ int main()
                 else if (al[i][j] == 'L') tile.setTexture(tileSet6);
                 else continue;
 
-                tile.setPosition(j*35-a, i*35+b);
+                tile.setPosition(j*35, i*35);
                 window.draw(tile);
             }
         }
@@ -127,5 +130,6 @@ int main()
         window.display();
     }
 
+    file.close();
     return 0;
 }

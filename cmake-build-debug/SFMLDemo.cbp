@@ -86,6 +86,9 @@
 		<Unit filename="/Users/n1kta/CLionProjects/SFMLDemo/Player.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
+		<Unit filename="/Users/n1kta/CLionProjects/SFMLDemo/View.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
 		<Unit filename="/Users/n1kta/CLionProjects/SFMLDemo/main.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
