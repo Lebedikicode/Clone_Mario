@@ -80,12 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/n1kta/CLionProjects/SFMLDemo/Interface.cpp">
-			<Option target="SFMLDemo"/>
-		</Unit>
-		<Unit filename="/Users/n1kta/CLionProjects/SFMLDemo/Map.cpp">
-			<Option target="SFMLDemo"/>
-		</Unit>
 		<Unit filename="/Users/n1kta/CLionProjects/SFMLDemo/Player.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>

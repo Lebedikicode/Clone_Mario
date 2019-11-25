@@ -15,14 +15,14 @@ private:
 
 public:
     float x, y, dx, dy; // координаты
-    float speed = 0; // скорость с которой двигается персонаж
+//    float speed = 0; // скорость с которой двигается персонаж
     int dir = 0; // направление
     std::string file; // путь к изображению
     Image Img;
     Texture Texture;
     Sprite Sprite;
-    Player(int x, int y, int rL, int rT, int rW, int rH, std::string file);
-    void update(float time);
+    Player(float x, float y, int rL, int rT, int rW, int rH, std::string file);
+//    void update(float time);
 
 };
 

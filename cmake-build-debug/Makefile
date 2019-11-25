@@ -123,60 +123,6 @@ SFMLDemo/fast:
 	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/build
 .PHONY : SFMLDemo/fast
 
-Interface.o: Interface.cpp.o
-
-.PHONY : Interface.o
-
-# target to build an object file
-Interface.cpp.o:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/Interface.cpp.o
-.PHONY : Interface.cpp.o
-
-Interface.i: Interface.cpp.i
-
-.PHONY : Interface.i
-
-# target to preprocess a source file
-Interface.cpp.i:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/Interface.cpp.i
-.PHONY : Interface.cpp.i
-
-Interface.s: Interface.cpp.s
-
-.PHONY : Interface.s
-
-# target to generate assembly for a file
-Interface.cpp.s:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/Interface.cpp.s
-.PHONY : Interface.cpp.s
-
-Map.o: Map.cpp.o
-
-.PHONY : Map.o
-
-# target to build an object file
-Map.cpp.o:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/Map.cpp.o
-.PHONY : Map.cpp.o
-
-Map.i: Map.cpp.i
-
-.PHONY : Map.i
-
-# target to preprocess a source file
-Map.cpp.i:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/Map.cpp.i
-.PHONY : Map.cpp.i
-
-Map.s: Map.cpp.s
-
-.PHONY : Map.s
-
-# target to generate assembly for a file
-Map.cpp.s:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/Map.cpp.s
-.PHONY : Map.cpp.s
-
 Player.o: Player.cpp.o
 
 .PHONY : Player.o
@@ -240,12 +186,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... SFMLDemo"
-	@echo "... Interface.o"
-	@echo "... Interface.i"
-	@echo "... Interface.s"
-	@echo "... Map.o"
-	@echo "... Map.i"
-	@echo "... Map.s"
 	@echo "... Player.o"
 	@echo "... Player.i"
 	@echo "... Player.s"
