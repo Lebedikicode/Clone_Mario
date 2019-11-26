@@ -14,15 +14,16 @@ class Player {
 private:
     float x, y;
 public:
-    float dx, dy; // координаты
+    float WIDTH, HEIGHT, dx, dy, speed = 0;//  // координаты // скорость с которой двигается персонаж
     int dir = 0; // направление
-    float speed = 0; // скорость с которой двигается персонаж
+    bool life, onGround, isMove, isSelected;
     std::string file; // путь к изображению
     Image Img;
     Texture Texture;
     Sprite Sprite;
-    Player(float x, float y, int rL, int rT, int rW, int rH, std::string file);
+    Player(float x, float y, float WIDTH, float HEIGHT, std::string file);
     void update(float time);
+    void mapCheck();
     float getX(); // координаты персонажа по х
     float getY(); // координаты персонажа по у
 };

@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include <fstream>
 #include "Player.h"
 #include "View.h"
@@ -39,7 +40,7 @@ int main()
     std::ifstream file;
     file.open("/Users/n1kta/CLionProjects/SFMLDemo/map.txt");
 
-    Player hero(50, 515, 0, 0, 32, 46, "img/allHeroes/p1_walk_photo-resizer.ru.png");
+    Player hero(50, 515, 32, 46, "img/allHeroes/p1_walk_photo-resizer.ru.png");
 
     if (!file) return 0;
     for (int r = 0; r < height; r++)

@@ -8,7 +8,7 @@ using namespace sf;
 View view;
 
 View getCameraFollowHero(float x, float y){
-    view.setCenter(x + 100, y);
+    view.setCenter(x, y);  // 400 218
     return view;
 }
 

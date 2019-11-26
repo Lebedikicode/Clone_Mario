@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/Users/n1kta/CLionProjects/SFMLDemo/Player.cpp
+Player.h
+/Users/n1kta/CLionProjects/SFMLDemo/Player.h
+Player.h
+/Users/n1kta/CLionProjects/SFMLDemo/Player.h
+fstream
+-
+
 /Users/n1kta/CLionProjects/SFMLDemo/Player.h
 SFML/Graphics.hpp
 -
@@ -18,6 +26,8 @@ SFML/Graphics.hpp
 
 /Users/n1kta/CLionProjects/SFMLDemo/main.cpp
 SFML/Graphics.hpp
+-
+iostream
 -
 fstream
 -
