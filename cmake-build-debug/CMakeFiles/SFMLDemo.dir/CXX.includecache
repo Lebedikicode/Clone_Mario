@@ -6,13 +6,21 @@
 
 #IncludeRegexTransform: 
 
+/Users/n1kta/CLionProjects/SFMLDemo/Map.h
+SFML/Graphics.hpp
+-
+iostream
+-
+fstream
+-
+
 /Users/n1kta/CLionProjects/SFMLDemo/Player.cpp
 Player.h
 /Users/n1kta/CLionProjects/SFMLDemo/Player.h
 Player.h
 /Users/n1kta/CLionProjects/SFMLDemo/Player.h
-fstream
--
+Map.h
+/Users/n1kta/CLionProjects/SFMLDemo/Map.h
 
 /Users/n1kta/CLionProjects/SFMLDemo/Player.h
 SFML/Graphics.hpp
@@ -29,12 +37,12 @@ SFML/Graphics.hpp
 -
 iostream
 -
-fstream
--
 Player.h
 /Users/n1kta/CLionProjects/SFMLDemo/Player.h
 View.h
 /Users/n1kta/CLionProjects/SFMLDemo/View.h
+Map.h
+/Users/n1kta/CLionProjects/SFMLDemo/Map.h
 
 /usr/local/include/SFML/Config.hpp
 TargetConditionals.h

@@ -1,6 +1,6 @@
 #include "Player.h"
 #include "Player.h"
-#include <fstream>
+#include "Map.h"
 
 Player::Player(float x, float y, float WIDTH, float HEIGHT, std::string file){
     this->x = x;
@@ -48,25 +48,12 @@ void Player::update(float time) {
 }
 
 void Player::mapCheck(){
-    const int height = 17, width = 225;
-    String al[height][width];
-
-    std::ifstream file;
-    file.open("/Users/n1kta/CLionProjects/SFMLDemo/map.txt");
-
-    for (int r = 0; r < height; r++)
-    {
-        for (int t = 0; t < width; t++)
-        {
-            char a;
-            file >> a;
-            al[r][t] = a;
-        }
-    }
+    Map map;
+    map.createMap();
 
     for(int i = y / 35; i < (y + HEIGHT) / 35; i++){
         for(int j = x / 35; j < (x + WIDTH)  / 35; j++){
-            if (al[i][j] == 'B'){
+            if (map.al[i][j]=='B' || map.al[i][j]=='C' || map.al[i][j]=='E' || map.al[i][j]=='A' || map.al[i][j]=='D'){
                 if(dy > 0)
                     y = i * 35 - HEIGHT;
                 if(dy < 0)
