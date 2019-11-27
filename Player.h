@@ -11,9 +11,8 @@ enum Direction {
 };
 
 class Player {
-private:
-    float x, y;
 public:
+    float x, y;
     float WIDTH, HEIGHT, dx, dy, speed = 0;//  // координаты // скорость с которой двигается персонаж
     int state = 0, health; // направление
     bool life, isMove, onGround;
@@ -21,7 +20,6 @@ public:
     Image Img;
     Texture Texture;
     Sprite Sprite;
-
 
     Player(float x, float y, float WIDTH, float HEIGHT, std::string file);
     void control();

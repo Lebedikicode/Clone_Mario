@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/n1kta/CLionProjects/SFMLDemo/Enemy.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
 		<Unit filename="/Users/n1kta/CLionProjects/SFMLDemo/Map.h">
 			<Option target="SFMLDemo"/>
 		</Unit>

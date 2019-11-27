@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Player.h"
 #include "Map.h"
 
 Player::Player(float x, float y, float WIDTH, float HEIGHT, std::string file){
@@ -24,35 +23,19 @@ void Player::control() {
     if(Keyboard::isKeyPressed(Keyboard::Left)){
         state = Left;
         speed = 0.1;
-//        CurrentFrame += 0.005 * time;
-//        if (CurrentFrame > 3) CurrentFrame -= 3;
-//        hero.Sprite.setTextureRect(IntRect(34 * int(CurrentFrame)+34, 46, -35, 46));
-//        getCameraFollowHero(hero.getX(), hero.getY());
     }
     if(Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::D)){
         state = Right;
         speed = 0.1;
-//        CurrentFrame += 0.005 * time;
-//        if (CurrentFrame > 3) CurrentFrame -= 3;
-//        hero.Sprite.setTextureRect(IntRect(36 * int(CurrentFrame), 47*2, 35, 46));
-//        getCameraFollowHero(hero.getX(), hero.getY());
     }
     if(Keyboard::isKeyPressed(Keyboard::Up) && onGround){
         state = Jump;
-        dy = -0.6;
+        dy = -0.8;
         onGround = false;
-//        CurrentFrame += 0.005 * time;
-//        if (CurrentFrame > 2) CurrentFrame -= 2;
-//        hero.Sprite.setTextureRect(IntRect(35 * int(CurrentFrame), 46*3, 35, 46));
-//        getCameraFollowHero(hero.getX(), hero.getY());
     }
     if(Keyboard::isKeyPressed(Keyboard::Down) || Keyboard::isKeyPressed(Keyboard::S)){
         state = Down;
         speed = 0.1;
-//        CurrentFrame += 0.005 * time;
-//        if (CurrentFrame > 2) CurrentFrame -= 2;
-//        hero.Sprite.setTextureRect(IntRect(35 * int(CurrentFrame), 140, 35, 46));
-//        getCameraFollowHero(hero.getX(), hero.getY());
     }
 }
 
@@ -94,7 +77,7 @@ void Player::mapCheck(float Dx, float Dy){
             if (map.al[i][j]=='B' || map.al[i][j]=='C' || map.al[i][j]=='E' || map.al[i][j]=='A' || map.al[i][j]=='D'){
                 if(Dy > 0) { y = i * 35 - HEIGHT; dy = 0; onGround = true; }
                 if(Dy < 0) { y = i * 35 + 35; dy = 0; }
-                if(Dx > 0) { x = j * 35 - HEIGHT; }
+                if(Dx > 0) { x = j * 35 - WIDTH; }
                 if(Dx < 0) { x = j * 35 + 35; }
             }
         }

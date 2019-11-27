@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/n1kta/CLionProjects/SFMLDemo/Enemy.h
+SFML/Graphics.hpp
+-
+
 /Users/n1kta/CLionProjects/SFMLDemo/Map.h
 SFML/Graphics.hpp
 -
@@ -14,19 +18,29 @@ iostream
 fstream
 -
 
-/Users/n1kta/CLionProjects/SFMLDemo/Player.cpp
-Player.h
-/Users/n1kta/CLionProjects/SFMLDemo/Player.h
-Player.h
-/Users/n1kta/CLionProjects/SFMLDemo/Player.h
-Map.h
-/Users/n1kta/CLionProjects/SFMLDemo/Map.h
-
 /Users/n1kta/CLionProjects/SFMLDemo/Player.h
 SFML/Graphics.hpp
 -
 string.h
 -
+
+/Users/n1kta/CLionProjects/SFMLDemo/View.h
+SFML/Graphics.hpp
+-
+
+/Users/n1kta/CLionProjects/SFMLDemo/main.cpp
+SFML/Graphics.hpp
+-
+iostream
+-
+Player.h
+/Users/n1kta/CLionProjects/SFMLDemo/Player.h
+View.h
+/Users/n1kta/CLionProjects/SFMLDemo/View.h
+Map.h
+/Users/n1kta/CLionProjects/SFMLDemo/Map.h
+Enemy.h
+/Users/n1kta/CLionProjects/SFMLDemo/Enemy.h
 
 /usr/local/include/SFML/Config.hpp
 TargetConditionals.h

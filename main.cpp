@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "View.h"
 #include "Map.h"
+#include "Enemy.h"
 
 using namespace sf;
 
@@ -14,17 +15,27 @@ int main()
     Map map;
     map.createMap();
 
-    map.tileSet.loadFromFile("/Users/n1kta/CLionProjects/SFMLDemo/img/grass_photo-resizer.ru.png");
-    map.tileSet2.loadFromFile("/Users/n1kta/CLionProjects/SFMLDemo/img/box_photo-resizer.ru.png");
-    map.tileSet3.loadFromFile("/Users/n1kta/CLionProjects/SFMLDemo/img/liquidWater_photo-resizer.ru.png");
-    map.tileSet4.loadFromFile("/Users/n1kta/CLionProjects/SFMLDemo/img/boxAlt_photo-resizer.ru.png");
-    map.tileSet5.loadFromFile("/Users/n1kta/CLionProjects/SFMLDemo/img/door_closedMid_photo-resizer.ru.png");
-    map.tileSet6.loadFromFile("/Users/n1kta/CLionProjects/SFMLDemo/img/door_closedTop_photo-resizer.ru.png");
-    map.tileSet7.loadFromFile("/Users/n1kta/CLionProjects/SFMLDemo/img/lock_green_photo-resizer.ru.png");
+    map.tileSet.loadFromFile("img/grass_photo-resizer.ru.png");
+    map.tileSet2.loadFromFile("img/box_photo-resizer.ru.png");
+    map.tileSet3.loadFromFile("img/liquidWater_photo-resizer.ru.png");
+    map.tileSet4.loadFromFile("img/boxAlt_photo-resizer.ru.png");
+    map.tileSet5.loadFromFile("img/door_closedMid_photo-resizer.ru.png");
+    map.tileSet6.loadFromFile("img/door_closedTop_photo-resizer.ru.png");
+    map.tileSet7.loadFromFile("img/lock_green_photo-resizer.ru.png");
 
     Sprite tile;
 
     Player hero(50, 300, 32, 45, "img/allHeroes/p1_walk_photo-resizer.ru.png");
+    Enemy enemy(6580, 492, 32, 45, "img/allHeroes/p3_walk_photo-resizer.ru.png"); // 6580
+
+    Image gameover_i;
+    gameover_i.loadFromFile("img/gm.png");
+
+    Texture gameover_t;
+    gameover_t.loadFromImage(gameover_i);
+
+    Sprite gameover_s;
+    gameover_s.setTexture(gameover_t);
 
     float CurrentFrame = 0;
     Clock clock;
@@ -32,8 +43,10 @@ int main()
     while (window.isOpen())
     {
         float time = clock.getElapsedTime().asMicroseconds();
+        float time1 = clock.getElapsedTime().asMicroseconds();
         clock.restart();
-        time = time / 700;
+        time = time / 400;
+        time1 /= 700;
 
         Event event;
 
@@ -47,7 +60,39 @@ int main()
             getCameraFollowHero(hero.getX(), hero.getY());
         }
 
+        if(Keyboard::isKeyPressed(Keyboard::Left)){
+            CurrentFrame += 0.005 * time;
+            if (CurrentFrame > 3) CurrentFrame -= 3;
+            hero.Sprite.setTextureRect(IntRect(34 * int(CurrentFrame)+34, 46, -35, 46));
+            getCameraFollowHero(hero.getX(), hero.getY());
+        }
+        if(Keyboard::isKeyPressed(Keyboard::Right)){
+            CurrentFrame += 0.005 * time;
+            if (CurrentFrame > 3) CurrentFrame -= 3;
+            hero.Sprite.setTextureRect(IntRect(36 * int(CurrentFrame), 47*2, 35, 46));
+            getCameraFollowHero(hero.getX(), hero.getY());
+        }
+        if(Keyboard::isKeyPressed(Keyboard::Up)){
+            CurrentFrame += 0.005 * time;
+            if (CurrentFrame > 2) CurrentFrame -= 2;
+            hero.Sprite.setTextureRect(IntRect(35 * int(CurrentFrame), 46*3, 35, 46));
+            getCameraFollowHero(hero.getX(), hero.getY());
+        }
+        if(Keyboard::isKeyPressed(Keyboard::Down)){
+            CurrentFrame += 0.005 * time;
+            if (CurrentFrame > 2) CurrentFrame -= 2;
+            hero.Sprite.setTextureRect(IntRect(35 * int(CurrentFrame), 140, 35, 46));
+            getCameraFollowHero(hero.getX(), hero.getY());
+        }
+
+        enemy.update(time1);
         hero.update(time);
+
+        if((int)enemy.x == (int)hero.x){
+            gameover_s.setPosition(hero.x , 100);
+
+        }
+
         window.setView(view);
         window.clear();
 
@@ -79,6 +124,7 @@ int main()
             }
         }
 
+        window.draw(enemy.Sprite);
         window.draw(hero.Sprite);
         window.display();
     }

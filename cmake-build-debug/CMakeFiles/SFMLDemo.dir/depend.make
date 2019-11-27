@@ -79,6 +79,7 @@ CMakeFiles/SFMLDemo.dir/Player.cpp.o: /usr/local/include/SFML/Window/Window.hpp
 CMakeFiles/SFMLDemo.dir/Player.cpp.o: /usr/local/include/SFML/Window/WindowHandle.hpp
 CMakeFiles/SFMLDemo.dir/Player.cpp.o: /usr/local/include/SFML/Window/WindowStyle.hpp
 
+CMakeFiles/SFMLDemo.dir/main.cpp.o: ../Enemy.h
 CMakeFiles/SFMLDemo.dir/main.cpp.o: ../Map.h
 CMakeFiles/SFMLDemo.dir/main.cpp.o: ../Player.h
 CMakeFiles/SFMLDemo.dir/main.cpp.o: ../View.h
