@@ -24,8 +24,7 @@ int main()
 
     Sprite tile;
 
-
-    Player hero(50, 300, 32, 46, "img/allHeroes/p1_walk_photo-resizer.ru.png");//515
+    Player hero(50, 300, 32, 45, "img/allHeroes/p1_walk_photo-resizer.ru.png");
 
     float CurrentFrame = 0;
     Clock clock;
@@ -44,36 +43,7 @@ int main()
                 window.close();
         }
 
-        if(Keyboard::isKeyPressed(Keyboard::Left)){
-            hero.dir = Left;
-            hero.speed = 0.1;
-            CurrentFrame += 0.005 * time;
-            if (CurrentFrame > 3) CurrentFrame -= 3;
-            hero.Sprite.setTextureRect(IntRect(34 * int(CurrentFrame)+34, 46, -34, 46));
-            getCameraFollowHero(hero.getX(), hero.getY());
-        }
-        if(Keyboard::isKeyPressed(Keyboard::Right) || Keyboard::isKeyPressed(Keyboard::D)){
-            hero.dir = Right;
-            hero.speed = 0.1;
-            CurrentFrame += 0.005 * time;
-            if (CurrentFrame > 3) CurrentFrame -= 3;
-            hero.Sprite.setTextureRect(IntRect(35 * int(CurrentFrame), 46*2, 35, 46));
-            getCameraFollowHero(hero.getX(), hero.getY());
-        }
-        if(Keyboard::isKeyPressed(Keyboard::Up) || Keyboard::isKeyPressed(Keyboard::W)){
-            hero.dir = Up;
-            hero.speed = 0.1;
-            CurrentFrame += 0.005 * time;
-            if (CurrentFrame > 2) CurrentFrame -= 2;
-            hero.Sprite.setTextureRect(IntRect(35 * int(CurrentFrame), 46*3, 35, 46));
-            getCameraFollowHero(hero.getX(), hero.getY());
-        }
-        if(Keyboard::isKeyPressed(Keyboard::Down) || Keyboard::isKeyPressed(Keyboard::S)){
-            hero.dir = Down;
-            hero.speed = 0.1;
-            CurrentFrame += 0.005 * time;
-            if (CurrentFrame > 2) CurrentFrame -= 2;
-            hero.Sprite.setTextureRect(IntRect(35 * int(CurrentFrame), 140, 35, 46));
+        if(hero.life){
             getCameraFollowHero(hero.getX(), hero.getY());
         }
 

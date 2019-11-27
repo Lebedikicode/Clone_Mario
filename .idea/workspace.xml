@@ -12,17 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6f85506-21b3-4a21-b0c1-8e96250c9194" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Map.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View.h" beforeDir="false" afterPath="$PROJECT_DIR$/View.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/Player.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/Player.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SFMLDemo" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SFMLDemo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SFMLDemo.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SFMLDemo.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,6 +96,9 @@
       <workItem from="1574789384074" duration="4475000" />
       <workItem from="1574843489905" duration="4979000" />
       <workItem from="1574857798564" duration="303000" />
+      <workItem from="1574860014199" duration="472000" />
+      <workItem from="1574863990357" duration="511000" />
+      <workItem from="1574865094468" duration="3321000" />
     </task>
     <servers />
   </component>
