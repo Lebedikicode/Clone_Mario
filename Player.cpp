@@ -1,5 +1,7 @@
+#include <iostream>
 #include "Player.h"
 #include "Map.h"
+
 
 Player::Player(float x, float y, float WIDTH, float HEIGHT, std::string file){
     this->x = x;
@@ -30,7 +32,7 @@ void Player::control() {
     }
     if(Keyboard::isKeyPressed(Keyboard::Up) && onGround){
         state = Jump;
-        dy = -0.8;
+        dy = -0.7;
         onGround = false;
     }
     if(Keyboard::isKeyPressed(Keyboard::Down) || Keyboard::isKeyPressed(Keyboard::S)){

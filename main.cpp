@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include <iostream>
+#include <SFML/Audio.hpp>
+#include <unistd.h>
 #include "Player.h"
 #include "View.h"
 #include "Map.h"
@@ -9,7 +10,7 @@ using namespace sf;
 
 int main()
 {
-    RenderWindow window(VideoMode(910, 595), "Mario");
+    RenderWindow window(VideoMode(910, 595), "Mario", Style::Titlebar);
     view.reset(FloatRect(0, 0, 910, 595));
 
     Map map;
@@ -26,27 +27,27 @@ int main()
     Sprite tile;
 
     Player hero(50, 300, 32, 45, "img/allHeroes/p1_walk_photo-resizer.ru.png");
-    Enemy enemy(6580, 492, 32, 45, "img/allHeroes/p3_walk_photo-resizer.ru.png"); // 6580
-
-    Image gameover_i;
-    gameover_i.loadFromFile("img/gm.png");
-
-    Texture gameover_t;
-    gameover_t.loadFromImage(gameover_i);
-
-    Sprite gameover_s;
-    gameover_s.setTexture(gameover_t);
+    Enemy enemy(6580, 492, 32, 45, "img/allHeroes/p3_walk_photo-resizer.ru.png");
+    Enemy enemy1(2150, 492, 32, 45, "img/allHeroes/p3_walk_photo-resizer.ru.png");
+    Enemy enemy2(3000, 492, 32, 45, "img/allHeroes/p3_walk_photo-resizer.ru.png");
 
     float CurrentFrame = 0;
     Clock clock;
 
+    bool isGame = true;
+
+    Music music;//создаем объект музыки
+    music.openFromFile("Ayy_Macarena_-_Tyga (online-audio-converter.com).wav");//загружаем файл
+    music.play();//воспроизводим музыку
+
     while (window.isOpen())
     {
+
         float time = clock.getElapsedTime().asMicroseconds();
-        float time1 = clock.getElapsedTime().asMicroseconds();
+        float time_en = clock.getElapsedTime().asMicroseconds();
         clock.restart();
-        time = time / 400;
-        time1 /= 700;
+        time = time / 800;
+        time_en = time_en / 900;
 
         Event event;
 
@@ -85,12 +86,13 @@ int main()
             getCameraFollowHero(hero.getX(), hero.getY());
         }
 
-        enemy.update(time1);
+        enemy.update(time_en);
+        enemy1.update(time_en);
+        enemy2.update(time_en);
         hero.update(time);
 
-        if((int)enemy.x == (int)hero.x){
-            gameover_s.setPosition(hero.x , 100);
-
+        if (hero.y >= 600){
+            break;
         }
 
         window.setView(view);
@@ -124,6 +126,34 @@ int main()
             }
         }
 
+        if((int)hero.x == (int)enemy.x && (int)hero.y == ((int)enemy.y-192)){
+            enemy.dx = 0;
+            sleep(1);
+            isGame = false;
+        }
+        if((int)hero.x == (int)enemy1.x){
+            enemy.dx = 0;
+            sleep(1);
+            isGame = false;
+        }
+        if((int)hero.x == (int)enemy2.x){
+            enemy.dx = 0;
+            sleep(1);
+            isGame = false;
+        }
+
+        if((int)hero.x == 7770){
+            sleep(1);
+            isGame = false;
+        }
+
+        if(!isGame){
+            music.stop();
+            return 0;
+        }
+
+        window.draw(enemy1.Sprite);
+        window.draw(enemy2.Sprite);
         window.draw(enemy.Sprite);
         window.draw(hero.Sprite);
         window.display();
